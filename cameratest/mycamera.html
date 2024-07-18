@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang=”en”>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+<!-- MATHY
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+-->    
+    <meta name="viewport" content="width=device-width">
+    
+    <title>Smart Lens</title>
+    <link rel="stylesheet" href="css/detailViewStyleJSON.css">
+    <link rel="stylesheet" href="https://unpkg.com/@ivteplo/utilities.css@1.0.0/build/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loadingOverlay.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<!-- Camera -->
+<main id="camera">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+    <!-- Camera sensor -->
+    <canvas id="camera--sensor"></canvas>
+
+    <h3 id="SmartLens">Smart Lens
+                        <p id="prob_view">
+
+                        </p>
+        <a href="index.html" id="cross">
+            <span>X</span>
+        </a>
+    </h3>
+    <!-- Camera view -->
+     
+    <video id="camera--view" autoplay playsinline></video>
+
+    <canvas id="canvas_no_display"></canvas>
+
+    <input type="range" class="slider" id="zoom">
+
+
+    <div id="sheet" class="column justify-end" aria-hidden="true">
+
+
+
+        <!-- The sheet itself -->
+        <div class="contents column">
+            <!-- Sheet controls -->
+            <header class="controls">
+                <!-- The thing to drag if you want to resize the sheet -->
+                <div class="draggable-area">
+                    <div class="draggable-thumb"></div>
+                </div>
+                <!-- Button to close the sheet -->
+                <button id="close-sheet" type="button" title="Close the sheet"><img src="images/icons/down-arrow.png"
+                                                                                    class="responsive-image"></button>
+            </header>
+
+            <!-- Body of the sheet -->
+            <main class="body fill column">
+                <div id="languageContainer" style="display:none">
+                    <a id="English" href="#">English</a>
+                </div>
+
+      
+                <video class="responsive-image" id="detailVideo" src="" controls>
+                </video>
+
+            </main>
+        </div>
+    </div>
+</main>
+<!-- Reference to your JavaScript file -->
+
+
+ <script src="js/mywebcam.js">
+
+
+<!-- Detail view -->
+<div id="detail_view_json">
+    <div id="detail_close-sheet" >&#10006;</div>
+    <h2 id="detail_artwork">
+    <span id="detail_artworkTitle">
+
+    </span>
+        -
+        <span id="detail_author">
+
+    </span>
+    </h2>
+    <h3 id="detail_detailName">
+
+    </h3>
+    <div class="flex-container">
+  
+    </div>
+    <video class="responsive-image" id="detail_detailVideo" src="" controls>
+    </video>
+
+    <br class="spacer"/>
+
+</div>
+
+</body>
+</html>
