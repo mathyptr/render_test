@@ -17,7 +17,9 @@ function cameraStart() {
     const webCamPromise = navigator.mediaDevices
         .getUserMedia(constraints)
         .then(function (stream) {
-            track = stream.getTracks()[0];
+            window.stream = stream;
+            cameraView.srcObject = stream;            
+/*            track = stream.getTracks()[0];
             cameraView.srcObject = stream;
 
             const capabilities = track.getCapabilities();
@@ -41,16 +43,14 @@ function cameraStart() {
                 track.applyConstraints({advanced: [{zoom: event.target.value}]});
             }
             input.hidden = false;
-
+*/
 
 
             return new Promise((resolve, reject) => {
-                this.videoRef.current.onloadedmetadata = () => {
+                webcam.onloadedmetadata = () => {
                   resolve();
                 };
               });
-
-
         })
         .catch(function (error) {
             console.error("Oops. Something is broken.", error);
